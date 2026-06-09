@@ -1,0 +1,302 @@
+/* =========================================
+   Global Body Reset
+========================================= */
+body {
+    background-color: #ffffff; /* Base color for the rest of the site below the intro */
+    overflow-x: hidden; /* Prevents horizontal layout breaking */
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+    font-family: 'Canva-Bloc';
+    src: url('../fonts/Canva-Bloc.woff2') format('woff2');
+}
+
+/* =========================================
+   Hero Background Wrapper
+========================================= */
+.hero-bg-wrapper {
+    background-color: #0b1442; /* Fallback dark blue */
+    background-image: url('../images/starry-bg.png'); 
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+/* =========================================
+   Navbar Custom Styling
+========================================= */
+
+#navbar {
+    z-index: 1030; 
+}
+
+
+#navbar .container-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.custom-navbar {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: transparent; 
+}
+
+/* Logo Setup */
+.logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    margin-left: 2rem;
+    transform: rotate(-3deg); 
+}
+
+.logo-top {
+    background-color: #f7e6a1;
+    color: #e52535;
+    font-weight: 900;
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-family: 'Canva-Bloc', serif;
+    letter-spacing: 1px;
+}
+
+.logo-bottom {
+    background-color: #e52535;
+    color: #f7e6a1;
+    font-weight: 900;
+    padding: 0.2rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: 'Canva-Bloc', serif;
+    letter-spacing: 3px;
+    margin-top: -0.6rem; 
+    z-index: 2;
+}
+
+/* Yellow Nav Bar Links */
+.nav-links-container {
+    background-color: #f6e8a8; 
+    border-top-left-radius: 10px; 
+    border-bottom-left-radius: 10px; 
+    padding: 0.5rem 0.5rem;
+    margin-right: 0; 
+    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem; 
+}
+
+.nav-links-container .nav-link {
+    color: #172154 !important; 
+    font-weight: 800;
+    font-family: 'Inter', serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-links-container .nav-link:hover {
+    color: #e52535 !important; 
+}
+
+/* =========================================
+   Hero Section & Typography
+========================================= */
+.hero-section {
+    padding-top: 3rem; 
+}
+
+.main-headline {
+    font-family: 'Canva-Bloc', serif; 
+    letter-spacing: 1px;
+}
+
+.headline-top {
+    color: #f7e6a1; 
+    font-size: clamp(6rem, 5vw, 4.5rem); 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); 
+    white-space: nowrap;
+}
+
+.headline-bottom {
+    color: #f26b80; 
+    font-size: clamp(4rem, 5.5vw, 5rem); 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+    margin-top: -0.5rem; 
+}
+
+/* Call To Action Button */
+.btn-get-started {
+    font-family: 'Inter', serif;
+    background-color: #c9f5f6; 
+    color: #0c1a45 !important; 
+    border-radius: 30px;
+    padding: 0.8rem 2.5rem;
+    font-size: 1.25rem;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-get-started:hover {
+    background-color: #a6ebec; 
+    transform: translateY(-3px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* =========================================
+   Illustration Container
+========================================= */
+.hero-illustrations {
+    position: relative;
+    width: 100%;
+    height: 550px; /* Provides enough height to fit the characters fully */
+    margin-top: 2rem;
+    overflow: hidden; 
+    z-index: 1;
+}
+
+.hero-illustrations img {
+    position: absolute;
+    transition: all 0.3s ease; 
+}
+
+/* The Clouds */
+.clouds-overlay {
+    bottom: -2px; /* Pulls it down to perfectly seal the gap above the cyan section */
+    left: 0;
+    width: 100%;
+    z-index: 10;
+}
+
+/* Main Characters */
+.boy {
+    bottom: 5%;
+    left: 2%;
+    width: 30%; 
+    max-width: 390px; 
+    z-index: 8;
+}
+
+.girl {
+    bottom: 5%;
+    right: 2%;
+    width: 38%;
+    max-width: 450px;
+    z-index: 8;
+}
+
+/* =========================================
+   Introduction Section Layout
+========================================= */
+#introduction {
+    background-color: #c9f5f6; /* Cyan background matching the clouds */
+    padding-top: 4rem;
+    padding-bottom: 6rem;
+}
+
+.intro-heading {
+    font-family: 'Canva-Bloc', 'Arial Black', Impact, sans-serif;
+    color: #e52535; /* Logo Red */
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+}
+
+.intro-lead {
+    color: #0b1442; /* Dark Navy for readability */
+    font-weight: 600;
+    max-width: 800px; /* Prevents the text from spanning the whole screen */
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   Theme Cards (Fun, Chunky, Playful)
+========================================= */
+.theme-card {
+    border: 3px solid #0b1442; /* Thick dark navy border */
+    border-radius: 20px; /* Big rounded corners */
+    background-color: #ffffff;
+    /* This creates a hard, solid shadow for a "sticker/cartoon" effect */
+    box-shadow: 0 6px 0 #0b1442; 
+    overflow: hidden;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.theme-card:hover {
+    transform: translateY(-5px); /* Lifts up slightly on hover */
+    box-shadow: 0 11px 0 #0b1442; /* Extends the shadow on hover */
+}
+
+/* Custom Image Wrappers for Colorful Backgrounds behind icons */
+.card-img-wrapper {
+    border-bottom: 3px solid #0b1442; /* Separator line between image and text */
+    text-align: center;
+    /* Optional: Sets a fixed height so all icons align perfectly */
+    height: 160px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Image scaling to ensure icons fit nicely inside the wrapper */
+.theme-card .card-img-top {
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Alternating Card Image Background Colors */
+.bg-yellow {
+    background-color: #f7e6a1;
+}
+
+.bg-pink {
+    background-color: #f26b80;
+}
+
+/* Because the section background is cyan, making the image wrapper a slightly darker or lighter cyan helps it stand out */
+.bg-cyan {
+    background-color: #a6ebec; 
+}
+
+/* Card Body Typography */
+.theme-card .card-body {
+    padding: 1.5rem;
+    color: #0b1442;
+}
+
+.theme-card .card-text {
+    margin-bottom: 0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+/* =========================================
+   Mobile Responsiveness
+========================================= */
+@media (max-width: 991px) {
+    .nav-links-container {
+        border-radius: 0; 
+        margin-top: 1rem;
+        padding: 1.5rem;
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+    
+    .logo-container {
+        margin-left: 1rem;
+    }
+    
+    .hero-illustrations {
+        height: 400px; /* Scales down container height for smaller screens */
+    }
+}
