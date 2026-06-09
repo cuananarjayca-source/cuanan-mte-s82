@@ -29,18 +29,6 @@ body {
    Navbar Custom Styling
 ========================================= */
 
-#navbar {
-    z-index: 1030; 
-}
-
-
-#navbar .container-fluid {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between; 
-}
-
 .custom-navbar {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -121,14 +109,16 @@ body {
 
 .headline-top {
     color: #f7e6a1; 
-    font-size: clamp(6rem, 5vw, 4.5rem); 
+    /* Set higher min (3rem), higher preferred (7vw), and higher max (6.5rem) */
+    font-size: clamp(3rem, 7vw, 6.5rem); 
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4); 
-    white-space: nowrap;
+    /* DELETED: white-space: nowrap; so it can safely wrap like the bottom text! */
 }
 
 .headline-bottom {
     color: #f26b80; 
-    font-size: clamp(4rem, 5.5vw, 5rem); 
+    /* Set lower min (2.5rem), lower preferred (5.5vw), and lower max (5rem) */
+    font-size: clamp(2.5rem, 5.5vw, 5rem); 
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
     margin-top: -0.5rem; 
 }
@@ -203,8 +193,8 @@ body {
 }
 
 .intro-heading {
-    font-family: 'Canva-Bloc', 'Arial Black', Impact, sans-serif;
-    color: #e52535; /* Logo Red */
+    font-family: 'Canva-Bloc';
+    color: #0b1442; 
     letter-spacing: 1px;
     font-size: 2.5rem;
 }
@@ -277,6 +267,289 @@ body {
     margin-bottom: 0;
     line-height: 1.5;
     font-size: 0.95rem;
+}
+
+/* =========================================
+   Featured Programs Section
+========================================= */
+.featured-section {
+    background-color: #c9f5f6; /* Matches the cyan from the intro section */
+    padding-bottom: 6rem;
+}
+
+.section-title {
+    font-family: 'Canva-Bloc', 'Arial Black', Impact, sans-serif;
+    color: #0b1442; /* Dark navy */
+    font-size: clamp(2.5rem, 6vw, 4.5rem); 
+    letter-spacing: 2px;
+}
+
+.section-subtitle {
+    color: #0b1442;
+    font-family: 'Arial Black', Impact, sans-serif;
+    letter-spacing: 1px;
+    font-size: 1rem;
+}
+
+/* =========================================
+   Program Cards
+========================================= */
+.program-card {
+    background-color: #0b1442;
+    border: 3px solid #f6e8a8; /* Light yellow border */
+    border-radius: 12px;
+    /* Soft shadow to lift it off the background slightly */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+}
+
+.program-text {
+    color: #f7e6a1; /* Light yellow text matching the border */
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+    font-family: 'Arial Black', Impact, sans-serif; /* Thick font for the content */
+}
+
+/* =========================================
+   Program Cards (Updated for Image Overlay)
+========================================= */
+.program-card {
+    background-color: #0b1442;
+    border: 3px solid #f6e8a8; 
+    border-radius: 12px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; /* Ensures the background image doesn't bleed out of the card */
+}
+
+/* Text Container */
+.text-content {
+    /* Restricts text width on desktop so it mostly avoids the image */
+    width: 75%; 
+}
+
+.program-text {
+    color: #f7e6a1; 
+    font-size: 0.85rem;
+    line-height: 1.6; /* Increased line-height for better readability */
+    margin-bottom: 1.2rem;
+    font-family: 'Arial Black', Impact, sans-serif;
+    /* Adding a subtle dark shadow ensures text remains readable even if it overlaps the image */
+    text-shadow: 1px 1px 4px rgba(11, 20, 66, 0.9); 
+}
+
+/* =========================================
+   Absolute Background Images
+========================================= */
+.program-bg-img {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%; /* Keeps the image large but out of the way */
+    max-width: 140px;
+    z-index: 0;
+    opacity: 0.95; 
+}
+
+.program-bg-img.right {
+    right: 15px;
+}
+
+.program-bg-img.left {
+    left: 15px;
+}
+
+/* =========================================
+   New Age Typography
+========================================= */
+.program-age {
+    color: #cce0ff; /* Light blue matching the Details button */
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   Program Button (Sticker Shadow Effect)
+========================================= */
+.program-btn {
+    background-color: #cce0ff; /* Light blue matching the mockup */
+    color: #000000 !important;
+    font-family: Arial, sans-serif;
+    font-weight: 800;
+    border: 2px solid #000000;
+    border-radius: 12px;
+    padding: 0.4rem 3.5rem;
+    box-shadow: 4px 4px 0px #000000; /* Solid black offset shadow */
+    transition: all 0.1s ease-in-out;
+}
+
+.program-btn:hover {
+    background-color: #b3cfff; /* Slightly darker blue on hover */
+    transform: translate(2px, 2px); /* Pushes the button down visually */
+    box-shadow: 2px 2px 0px #000000; /* Shrinks the shadow to simulate being pressed */
+}
+
+/* =========================================
+   Resources & About Sections
+========================================= */
+
+/* Resource Card Specifics */
+.resource-card {
+    background-color: #ffffff;
+}
+
+.border-end-custom {
+    /* Creates the thick line separating the image from the text on desktop */
+    border-right: 3px solid #0b1442; 
+}
+
+.resource-headline {
+    color: #e52535; /* Logo red */
+    font-family: 'Arial Black', Impact, sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+
+.mission-title {
+    color: #e52535;
+    font-family: 'Canva-Bloc', 'Arial Black', Impact, sans-serif;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    border-bottom: 3px dashed #0b1442; /* Playful dashed underline */
+    padding-bottom: 0.8rem;
+    display: inline-block;
+}
+
+/* Contact Info Styling */
+.contact-info li {
+    font-family: 'Arial Black', Impact, sans-serif;
+    color: #0b1442;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+}
+
+/* =========================================
+   Footer Section
+========================================= */
+.site-footer {
+    background-color: #0b1442;
+    color: #f7e6a1; /* Light yellow text */
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    border-top: 8px solid #f26b80; /* Playful thick pink border at the top */
+}
+
+/* Recreated Logo Specifically for the Footer */
+.logo-container-footer {
+    transform: rotate(-3deg);
+}
+
+.logo-top-footer {
+    background-color: #f7e6a1;
+    color: #e52535;
+    font-weight: 900;
+    padding: 0.3rem 1rem;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-family: Arial, sans-serif;
+    letter-spacing: 1px;
+}
+
+.logo-bottom-footer {
+    background-color: #e52535;
+    color: #f7e6a1;
+    font-weight: 900;
+    padding: 0.2rem 1.2rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-family: Arial, sans-serif;
+    margin-top: -0.6rem;
+    z-index: 2;
+}
+
+/* Footer Typography & Layout */
+.footer-heading {
+    color: #c9f5f6; /* Cyan */
+    font-family: 'Arial Black', Impact, sans-serif;
+    letter-spacing: 1px;
+}
+
+.footer-text {
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* Footer Links Styling */
+.footer-links li {
+    margin-bottom: 0.8rem;
+}
+
+.footer-links a {
+    color: #f7e6a1;
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.2s ease-in-out;
+}
+
+.footer-links a:hover {
+    color: #f26b80; /* Changes to pink on hover */
+    text-decoration: underline;
+}
+
+/* Social Media Icons (Circular, Interactive) */
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: #0b1442; /* Navy icon color */
+    background-color: #f7e6a1; /* Yellow circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-link:hover {
+    background-color: #c9f5f6; /* Changes to cyan on hover */
+    transform: translateY(-3px); /* Bounces up slightly */
+    color: #0b1442;
+}
+
+/* Copyright Divider Area */
+.border-top-custom {
+    border-top: 2px dashed rgba(247, 230, 161, 0.3); /* Soft dashed line */
+}
+
+.copyright-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+/* =========================================
+   Mobile Responsiveness Update
+========================================= */
+@media (max-width: 768px) {
+    .text-content {
+        width: 100% !important; /* Lets text take full width on small screens */
+    }
+    
+    .program-bg-img {
+        opacity: 0.3; /* Fades the image into a watermark on mobile so text has priority */
+        width: 50%;
+    }
+
+    .border-end-custom {
+        /* On mobile, the columns stack, so we change the right border to a bottom border */
+        border-right: none;
+        border-bottom: 3px solid #0b1442;
+    }
 }
 
 /* =========================================
